@@ -4,8 +4,8 @@ const Request = function(url) {
 
 Request.prototype.get = function (onComplete) {
   const request = new XMLHttpRequest();
-  request.open(‘GET’, this.url);
-  request.addEventListener(‘load’, function () {
+  request.open('GET', this.url);
+  request.addEventListener('load', function () {
     if(request.status !== 200) return;
 
     const response = JSON.parse(request.responseText);
@@ -17,11 +17,11 @@ Request.prototype.get = function (onComplete) {
 
 Request.prototype.post = function (payload, onComplete) {
   const request = new XMLHttpRequest();
-  request.open(‘POST’, this.url);
+  request.open('POST', this.url);
 
-  request.setRequestHeader (‘Content-Type’, ‘application/json’)
+  request.setRequestHeader ('Content-Type', 'application/json')
 
-  request.addEventListener(‘load’, function () {
+  request.addEventListener('load', function () {
     if(request.status !== 201) return;
 
     const response = JSON.parse(request.responseText);
